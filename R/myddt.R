@@ -4,6 +4,10 @@
 #' @param SPECIES the specified species
 #'
 #' @return A plot of DDT data, a .csv file, and list outputs
+#' @importFrom dplyr '%>%' filter
+#' @importFrom ggplot2 aes_string geom_smooth
+#' ggplot geom_point ggtitle
+#' @importFrom utils write.csv
 #' @export
 #'
 #' @examples \dontrun{myddt(df = ddt, species = "CCATFISH")}
@@ -11,15 +15,15 @@
 myddt <- function(df, SPECIES)
 {
 
-  print(ddt)
+RIVER <- WEIGHT <- LENGTH <- NULL
 
   #rel freq before subsetting:
   tab = table(df$RIVER) / length(df$RIVER)
-  print(tab)
+
 
   newdf <- df%>% filter(SPECIES == {{SPECIES}})
 
-  print(newdf)
+
 
 
   g <- ggplot(newdf, aes_string(x= "WEIGHT" ,y= "LENGTH")) +
@@ -31,6 +35,8 @@ myddt <- function(df, SPECIES)
     ggtitle("Reagan Rasmussen")
   print(g)
 
+  list = list(ddt = df, filtered = newdf, table = tab)
+  print(list)
 
   #the data frame used to make the plot is df1
   #df1 needs to be written to the working directory as a csv
