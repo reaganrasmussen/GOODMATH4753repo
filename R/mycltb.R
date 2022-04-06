@@ -14,7 +14,7 @@ mycltb=function(n,iter,p,...){
   rbinom <- hist <- curve <- dnorm <- x <- NULL
 
   y=rbinom(n*iter,size=n,prob=p)
-  data=matrix(y,nr=n,nc=iter,byrow=TRUE)
+  data=matrix(y,nrow=n,ncol=iter,byrow=TRUE)
   w=apply(data,2,mean)
   param=hist(w,plot=FALSE)
   ymax=max(param$density)
