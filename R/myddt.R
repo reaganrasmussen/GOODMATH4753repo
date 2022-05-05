@@ -15,12 +15,10 @@
 myddt <- function(df, SPECIES)
 {
 
-  ddt <- read.csv("DDT.csv")
-
   RIVER <- WEIGHT <- LENGTH <- NULL
 
   #rel freq before subsetting:
-  tab = table(ddt$RIVER) / length(ddt$RIVER)
+  tab = table(df$RIVER) / length(df$RIVER)
 
 
   newdf <- df%>% filter(SPECIES == {{SPECIES}})

@@ -9,6 +9,7 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  echo = TRUE,
   collapse = TRUE,
   comment = "ws#>",
   fig.align = "center"
@@ -40,8 +41,15 @@ mycltb(n=4,iter=10000,p=0.3)
 ## The third function
 myNRML.R - Takes in parameters and returns a log likelihood curve and Newton-Raphson Algorithm curve.
 Call:
-```{r}
+```{r,fig.height=7,fig.width=7}
 myNRML(x0=1,delta=0.000001,llik=function(x) log(dpois(4,x)*dpois(6,x)*dpois(7,x)*dpois(6,x)*dpois(5,x)),xrange=c(0,20),parameter="lambda")
+```
+
+## The fourth function
+myddt.R - Takes in parameters and returns a plot of DDT data, a .csv file, and list outputs
+Call:
+```{r}
+myddt(ddt, SPECIES = "CCATFISH")
 ```
 
 
