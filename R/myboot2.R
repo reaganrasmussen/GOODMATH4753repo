@@ -7,7 +7,7 @@
 #' @param cx constant of x
 #' @param ... pulls parameters from within the function
 #'
-#' @return an invisible list
+#' @return a histogram
 #' @export
 #'
 #' @examples

@@ -20,7 +20,7 @@ myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 \item{...}{pulls parameters from within the function}
 }
 \value{
-an invisible list
+a histogram
 }
 \description{
 Bootleg function
